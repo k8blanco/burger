@@ -1,5 +1,5 @@
 //Import connection
-var connection = require("/connection.js");
+var connection = require("../config/connection.js");
 
 //Helper functions
 function printQuestionMarks(num) {
