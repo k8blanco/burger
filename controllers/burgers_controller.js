@@ -2,10 +2,14 @@ var express = require("express");
 
 var router = express.Router();
 
-var burger = require("../models/burger.js");
+//Import the model (burger.js) to use its database functions
+var burgerModel = require("../models/burger.js");
 
+//Create all our routes and set up logic within those routes where we need it
+
+//route to main landing page
 router.get("/", function(req, res) {
-    burger.selectAll(function(data) {
+    burgerModel.selectAll(function(data) {
         var hbsObject = {
             burgers: data
         };
@@ -14,37 +18,28 @@ router.get("/", function(req, res) {
     });
 });
 
+//route for adding a burger
 router.post("/api/burgers", function(req, res) {
-    burger.insertOne([
-        "name", "devoured"
-    ], [
-        rq.body.name, req.body.sleepy
-    ], function(result) {
+    burgerModel.insertOne(["burger_name"], [req.body.name], function(result) {
         res.json({ id: result.insertId });
     });
 });
 
+//route for updating burger conditions (devoured)
 router.put("/api/burgers/:id", function(req, res) {
-    let condition = "id = " + req.params.id;
+    let condition = " id = " + req.params.id;
 
-    console.log("condition", condition);
-
-    burger.updateOne({
+    burgerModel.updateOne({
         devoured: req.body.devoured
     }, condition, function(result) {
         if (result.changedRows == 0) {
-            //If no rows were changed, then the id must not exist, so 404
+            //if no rows changed, then ID doesn't exist, so 404
             return res.status(404).end();
         } else {
             res.status(200).end();
         }
     });
 });
-
-
-
-
-
 
 
 
