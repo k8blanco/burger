@@ -1,0 +1,36 @@
+body {
+    background-color: #ffd180;
+}
+
+h1 {
+    font-family: 'Luckiest Guy', cursive;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 35px;
+    text-align: left;
+}
+
+h3 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 30px;
+}
+
+h4 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 16px;
+}
+
+button {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.card {
+    background-color: #fff8e1;
+}
+
+ul {
+    text-align: left;
+}
