@@ -4,3 +4,6 @@
 
 * Eat a burger, add a burger, and eat a burger again!  Keep track of all the deliciousness you've eaten, and
 see what others have eaten as well.
+
+* Link to deployed app:
+https://obscure-bastion-10259.herokuapp.com/
