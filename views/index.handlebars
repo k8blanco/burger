@@ -6,6 +6,8 @@
     <p><a href="https://giphy.com/stickers/burger-hamburger-in-n-out-TFz4os23ZxtdTvEqlP"></a></p>
 </div>
 
+{{!-- <img class="img" src="/assets/img/burger.jpeg"> --}}
+
 <div class="container">
     <div class="row">
         <div class="card col s12">
@@ -14,9 +16,13 @@
                 <ul>
                     {{#each burgers}}
                     {{#unless this.devoured}}
-                    <li>
+                    <li>    
+                        <div class="right-align">
                         {{burger_name}}
-                        <button class="devour" data-id="{{id}}" data-newDevour="{{devoured}}">DEVOUR!</button>
+                        
+                            <button class="btn waves-effect waves-light devour" type="submit" data-id="{{id}}"
+                                data-newDevour="{{devoured}}">DEVOUR! <i class="fas fa-hamburger"></i></button>
+                        </div>
                     </li>
                     {{/unless}}
                     {{/each}}
@@ -44,13 +50,15 @@
             <h2 class="center-align">Add a Burger!</h2>
 
             <form class="create-form">
-
                 <div class="form-group">
                     <label for="burgerName">Burger Name: </label>
                     <input type="text" id="burgerName">
                 </div>
 
-                <button type="submit" id="addBurger">Add Burger</button>
+                <div class="center-align">
+                    <button class="btn waves-effect waves-light" type="submit" name="action" id="addBurger">Add Burger
+                        <i class="fas fa-hamburger"></i></button>
+                </div>
 
             </form>
         </div>
